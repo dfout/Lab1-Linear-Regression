@@ -1,4 +1,4 @@
-Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel type,City (L/100 km),Highway (L/100 km),Combined (L/100 km),Combined (mpg),CO2 emissions (g/km),CO2 rating,Smog rating
+ModelYear,Make,Model,VehicleClass,EngineSize,Cylinders,Transmission,FuelType,City,Highway,CombinedL100km,CombinedMPG,CO2Emissions,CO2Rating,SmogRating
 2024,Acura,Integra A-SPEC,Full-size,1.5,4,AV7,Z,8.1,6.5,7.4,38,172,6,7
 2024,Acura,Integra A-SPEC,Full-size,1.5,4,M6,Z,8.9,6.5,7.8,36,181,6,6
 2024,Acura,Integra Type S,Full-size,2.0,4,M6,Z,11.1,8.3,9.9,29,230,5,6
@@ -22,7 +22,7 @@ Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel 
 2024,Audi,A4 45 TFSI quattro,Compact,2.0,4,AM7,Z,10.0,7.4,8.8,32,208,5,5
 2024,Audi,A4 allroad 45 TFSI quattro,Station wagon: Small,2.0,4,AM7,Z,10.3,7.8,9.2,31,215,5,5
 2024,Audi,A5 Cabriolet 45 TFSI quattro,Subcompact,2.0,4,AM7,Z,9.8,7.1,8.6,33,202,5,5
-2024,Audi,A5 Coupé 45 TFSI quattro,Subcompact,2.0,4,AM7,Z,10.0,7.4,8.8,32,208,5,5
+2024,Audi,A5 Coupï¿½ 45 TFSI quattro,Subcompact,2.0,4,AM7,Z,10.0,7.4,8.8,32,208,5,5
 2024,Audi,A5 Sportback 45 TFSI quattro,Mid-size,2.0,4,AM7,Z,10.0,7.4,8.8,32,208,5,5
 2024,Audi,A6 45 TFSI quattro,Mid-size,2.0,4,AM7,Z,10.4,7.2,9.0,31,210,5,5
 2024,Audi,A6 55 TFSI quattro,Mid-size,3.0,6,AM7,Z,10.9,8.0,9.6,29,225,5,5
@@ -37,7 +37,7 @@ Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel 
 2024,Audi,Q7 45 TFSI quattro,Sport utility vehicle: Standard,2.0,4,AS8,Z,12.3,9.4,11.0,26,258,4,5
 2024,Audi,Q7 55 TFSI quattro,Sport utility vehicle: Standard,3.0,6,AS8,Z,12.7,9.8,11.4,25,268,4,5
 2024,Audi,Q8 55 TFSI quattro,Sport utility vehicle: Standard,3.0,6,AS8,Z,13.6,10.4,12.1,23,285,4,5
-2024,Audi,RS 5 Coupé,Subcompact,2.9,6,AS8,Z,12.9,9.3,11.3,25,264,4,5
+2024,Audi,RS 5 Coupï¿½,Subcompact,2.9,6,AS8,Z,12.9,9.3,11.3,25,264,4,5
 2024,Audi,RS 5 Sportback,Mid-size,2.9,6,AS8,Z,13.3,9.6,11.6,24,272,4,5
 2024,Audi,RS 6 Avant performance,Station wagon: Mid-size,4.0,8,AS8,Z,16.9,11.0,14.2,20,335,3,3
 2024,Audi,RS 7 Sportback performance,Mid-size,4.0,8,AS8,Z,16.9,11.0,14.2,20,335,3,3
@@ -45,7 +45,7 @@ Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel 
 2024,Audi,S3 quattro,Subcompact,2.0,4,AM7,Z,10.2,7.4,8.9,32,208,5,5
 2024,Audi,S4 quattro,Compact,3.0,6,AS8,Z,11.1,8.1,9.7,29,228,5,5
 2024,Audi,S5 Cabriolet quattro,Subcompact,3.0,6,AS8,Z,11.9,8.8,10.5,27,247,5,5
-2024,Audi,S5 Coupé quattro,Subcompact,3.0,6,AS8,Z,11.1,8.1,9.7,29,228,5,5
+2024,Audi,S5 Coupï¿½ quattro,Subcompact,3.0,6,AS8,Z,11.1,8.1,9.7,29,228,5,5
 2024,Audi,S5 Sportback quattro,Mid-size,3.0,6,AS8,Z,11.8,8.2,10.2,28,238,5,5
 2024,Audi,S6 quattro,Mid-size,2.9,6,AS8,Z,12.3,8.8,10.7,26,252,5,5
 2024,Audi,S7 quattro,Mid-size,2.9,6,AS8,Z,12.3,8.8,10.7,26,252,5,5
@@ -419,10 +419,10 @@ Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel 
 2024,Kia,Sportage AWD,Sport utility vehicle: Small,2.5,4,AS8,X,10.1,8.7,9.5,30,222,5,7
 2024,Kia,Sportage Hybrid AWD,Sport utility vehicle: Small,1.6,4,AM6,X,6.1,6.3,6.2,46,145,7,7
 2024,Kia,Telluride AWD,Sport utility vehicle: Small,3.8,6,AS8,X,13.1,10.0,11.7,24,275,4,6
-2024,Lamborghini,Huracán EVO Spyder,Two-seater,5.2,10,AM7,Z,18.4,13.3,16.1,18,375,2,1
-2024,Lamborghini,Huracán Sterrato,Two-seater,5.2,10,AM7,Z,18.4,13.3,16.1,18,375,2,1
-2024,Lamborghini,Huracán STO,Two-seater,5.2,10,AM7,Z,18.3,12.9,15.9,18,370,2,1
-2024,Lamborghini,Huracán Tecnica,Two-seater,5.2,10,AM7,Z,18.3,12.9,15.9,18,370,2,1
+2024,Lamborghini,Huracï¿½n EVO Spyder,Two-seater,5.2,10,AM7,Z,18.4,13.3,16.1,18,375,2,1
+2024,Lamborghini,Huracï¿½n Sterrato,Two-seater,5.2,10,AM7,Z,18.4,13.3,16.1,18,375,2,1
+2024,Lamborghini,Huracï¿½n STO,Two-seater,5.2,10,AM7,Z,18.3,12.9,15.9,18,370,2,1
+2024,Lamborghini,Huracï¿½n Tecnica,Two-seater,5.2,10,AM7,Z,18.3,12.9,15.9,18,370,2,1
 2024,Lamborghini,Urus Performante,Mid-size,4.0,8,AS8,Z,16.6,12.5,14.8,19,345,3,3
 2024,Lamborghini,Urus S,Sport utility vehicle: Standard,4.0,8,AS8,Z,16.6,12.5,14.8,19,345,3,3
 2024,Land Rover,Defender 90 P300,Sport utility vehicle: Standard,2.0,4,AS8,Z,13.1,11.4,12.3,23,289,4,7

@@ -3,7 +3,7 @@ import pandas as pd
 import pylab as pl
 import numpy as np
 
-
+"Model year,Make,Model,Vehicle class,Engine size (L),Cylinders,Transmission,Fuel type,City (L/100 km),Highway (L/100 km),Combined (L/100 km),Combined (mpg),CO2 emissions (g/km),CO2 rating,Smog rating"
 
 df = pd.read_csv("FuelConsumptionCo2.csv", encoding='ISO-8859-1')
 # Take a look at the dataset
@@ -12,31 +12,31 @@ df.head()
 # Summarize data
 df.describe()
 
-cdf = df[['Engine size (L)','Cylinders','Combined (mpg)','CO2 emissions (g/km)']]
+cdf = df[['EngineSize','Cylinders','CombinedMPG','CO2Emissions']]
 cdf.head(9)
 
 # Plot each of these features
-viz = cdf[['Cylinders','Engine size (L)','CO2 emissions (g/km)','Combined (mpg)']]
+viz = cdf[['Cylinders','EngineSize','CO2Emissions','CombinedMPG']]
 viz.hist()
 plt.show()
 
 # Now, lets plot each of these features against the Emission, to see how linear their relationship is:
-plt.scatter(cdf.Combined, cdf.emissions,  color='blue')
+plt.scatter(cdf.CombinedMPG, cdf.CO2Emissions,  color='blue')
 plt.xlabel("Combined (mpg)")
-plt.ylabel("Emissions")
+plt.ylabel("CO2 emissions (g/km)")
 plt.show()
 
-plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
-plt.xlabel("Engine size")
-plt.ylabel("Emission")
+plt.scatter(cdf.EngineSize, cdf.CO2Emissions,  color='blue')
+plt.xlabel("Engine Size (L)")
+plt.ylabel("Co2 Emissions (g/km)")
 plt.show()
 
 ##PRACTICE
 
 # Plot Cylinder versus the Emission, to see how linear their relationship is
-plt.scatter(cdf.CYLINDER, cdf.CO2EMISSIONS,  color='blue')
-plt.xlabel("Cylinder")
-plt.ylabel("Emission")
+plt.scatter(cdf.Cylinders, cdf.CO2Emissions,  color='blue')
+plt.xlabel("Cylinders")
+plt.ylabel("C02 Emissions (g/km)")
 plt.show()
 
 
@@ -53,18 +53,20 @@ test = cdf[~msk]
 
 
 ## Train Data Distribution
-plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
-plt.xlabel("Engine size")
-plt.ylabel("Emission")
+plt.scatter(train.EngineSize, train.CO2Emissions,  color='blue')
+plt.xlabel("Engine size (L)")
+plt.ylabel("C02 Emissions (g/km)")
 plt.show()
 
 
 ##Modeling
 
+## Engine Size vs. C02 Emissisons
+
 from sklearn import linear_model
 regr = linear_model.LinearRegression()
-train_x = np.asanyarray(train[['ENGINESIZE']])
-train_y = np.asanyarray(train[['CO2EMISSIONS']])
+train_x = np.asanyarray(train[['EngineSize']])
+train_y = np.asanyarray(train[['CO2Emissions']])
 regr.fit(train_x, train_y)
 # The coefficients
 print ('Coefficients: ', regr.coef_)
@@ -73,18 +75,18 @@ print ('Intercept: ',regr.intercept_)
 
 #Plot outputs
 
-plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+plt.scatter(train.EngineSize, train.CO2Emissions,  color='blue')
 plt.plot(train_x, regr.coef_[0][0]*train_x + regr.intercept_[0], '-r')
-plt.xlabel("Engine size")
-plt.ylabel("Emission")
+plt.xlabel("Engine size (L)")
+plt.ylabel("C02 Emissions (g/km)")
 
 
 ##Evaluation
 
 from sklearn.metrics import r2_score
 
-test_x = np.asanyarray(test[['ENGINESIZE']])
-test_y = np.asanyarray(test[['CO2EMISSIONS']])
+test_x = np.asanyarray(test[['EngineSize']])
+test_y = np.asanyarray(test[['CO2Emissions']])
 test_y_ = regr.predict(test_x)
 
 print("Mean absolute error: %.2f" % np.mean(np.absolute(test_y_ - test_y)))
@@ -95,13 +97,16 @@ print("R2-score: %.2f" % r2_score(test_y , test_y_) )
 
 ##Exercise
 
+## Model instead..
+### CombinedMPG vs. CO2 Emissions
+
 # Lets see what the evaluation metrics are if we trained a regression model using the FUELCONSUMPTION_COMB feature. 
 
 # train_x = np.asanyarray(train[('FUELCONSUMPTION_COMB')])
 # test_x = np.asanyarray(test[('FUELCONSUMPTION_COMB')])
-train_x = train[["FUELCONSUMPTION_COMB"]]
+train_x = train[["CombinedMPG"]]
 
-test_x = test[["FUELCONSUMPTION_COMB"]]
+test_x = test[["CombinedMPG"]]
 
 ## Now train a linear regression model using train_x you created and the train_y created previously
 
@@ -118,3 +123,17 @@ predictions = regr.predict(test_x)
 print("Mean absolute error: %.2f" % np.mean(np.absolute(predictions - test_y)))
 
 # MAE = np.mean(np.absolute(predictions - test_y))
+
+
+##OUTPUT:
+"""
+Coefficients:  [[39.48502943]]
+Intercept:  [137.09080016]
+Mean absolute error: 29.21
+Residual sum of squares (MSE): 1601.81
+R2-score: 0.65
+Mean absolute error: 18.10
+"""
+
+
+## We can see that the MAE is much worse when we trained with the Engine Size versus combined CombinedMPG
